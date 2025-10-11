@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Li outya</string>
+    <string name="app_logo">App Logo</string>
+    <string name="amount">Amount</string>
+    <string name="amount_hint">Enter amount</string>
+    <string name="usd">USD</string>
+    <string name="khr">KHR</string>
+    <string name="category">Category</string>
+    <string name="add_category">Add Category</string>
+    <string name="remark">Remark</string>
+    <string name="remark_hint">Write a note</string>
+    <string name="add_expense">Add Expense</string>
+
+</resources>

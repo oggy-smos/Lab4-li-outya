@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">កម្មវិធីតាមដានការចំណាយ</string>
+    <string name="app_logo">និមិត្តសញ្ញាកម្មវិធី</string>
+    <string name="amount">ចំនួន</string>
+    <string name="amount_hint">បញ្ចូលចំនួន</string>
+    <string name="usd">ដុល្លារ</string>
+    <string name="khr">រៀល</string>
+    <string name="category">ប្រភេទ</string>
+    <string name="add_category">បន្ថែមប្រភេទ</string>
+    <string name="remark">កំណត់សម្គាល់</string>
+    <string name="remark_hint">បញ្ចូលកំណត់សម្គាល់</string>
+    <string name="add_expense">បន្ថែមការចំណាយ</string>
+</resources>
