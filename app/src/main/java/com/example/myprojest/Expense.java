@@ -1,4 +1,4 @@
 package com.example.myprojest;
 
-public class Activitymain {
+public class Expense {
 }
