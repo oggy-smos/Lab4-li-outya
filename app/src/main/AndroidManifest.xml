@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <!-- Main Activity (app starts here) -->
         <activity
             android:name=".Activitymain"
             android:exported="true">
@@ -20,12 +19,11 @@
             </intent-filter>
         </activity>
 
-        <!-- Add Expense Activity -->
-        <activity android:name=".AddExpenseActivity" android:exported="true" />
+        <activity android:name=".AddExpenseActivity" />
 
-        <!-- Expense Detail Activity -->
-        <activity android:name=".ExpenseDetailActivity" android:exported="true" />
+        <activity android:name=".ExpenseListActivity" />
+
+        <activity android:name=".ExpenseDetailActivity" />
 
     </application>
-
 </manifest>

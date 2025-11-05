@@ -16,7 +16,6 @@ public class ExpenseDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense_detail);
 
-        // Initialize views
         tvAmount = findViewById(R.id.tvAmount);
         tvCurrency = findViewById(R.id.tvCurrency);
         tvCategory = findViewById(R.id.tvCategory);
@@ -25,35 +24,21 @@ public class ExpenseDetailActivity extends AppCompatActivity {
         btnAddNew = findViewById(R.id.btnAddNew);
         btnBackHome = findViewById(R.id.btnBackHome);
 
-        // Get data from intent
         Intent intent = getIntent();
         if (intent != null) {
-            String amount = intent.getStringExtra("amount");
-            String currency = intent.getStringExtra("currency");
-            String category = intent.getStringExtra("category");
-            String remark = intent.getStringExtra("remark");
-            String date = intent.getStringExtra("date");
-
-            // Display data
-            tvAmount.setText("Amount: " + amount);
-            tvCurrency.setText("Currency: " + currency);
-            tvCategory.setText("Category: " + category);
-            tvRemark.setText("Remark: " + remark);
-            tvDate.setText("Created Date: " + date);
+            tvAmount.setText("Amount: " + intent.getStringExtra("amount"));
+            tvCurrency.setText("Currency: " + intent.getStringExtra("currency"));
+            tvCategory.setText("Category: " + intent.getStringExtra("category"));
+            tvRemark.setText("Remark: " + intent.getStringExtra("remark"));
+            tvDate.setText("Date: " + intent.getStringExtra("date"));
         }
 
-        // Go to Add Expense screen
-        btnAddNew.setOnClickListener(v -> {
-            Intent addExpenseIntent = new Intent(this, AddExpenseActivity.class);
-            startActivity(addExpenseIntent);
-            finish(); // Optional: finish current activity
-        });
+        btnAddNew.setOnClickListener(v -> startActivity(new Intent(this, AddExpenseActivity.class)));
 
-        // Go back to Home screen
         btnBackHome.setOnClickListener(v -> {
-            Intent homeIntent = new Intent(this, Activitymain.class);
-            homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(homeIntent);
+            Intent home = new Intent(this, Activitymain.class);
+            home.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(home);
             finish();
         });
     }

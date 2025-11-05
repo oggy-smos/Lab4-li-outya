@@ -1,173 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".AddExpenseActivity">
+    android:background="#FFFFFF">
 
-    <!-- App Logo -->
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:contentDescription="@string/app_logo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_marginBottom="90dp"> <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!-- Title -->
-    <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/imgLogo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/app_logo"
+            app:srcCompat="@mipmap/ic_launcher" />
 
-    <!-- Amount Label -->
-    <TextView
-        android:id="@+id/txtAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/amount"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="32dp" />
-
-    <!-- Amount Input -->
-    <EditText
-        android:id="@+id/edtAmount"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/amount_hint"
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@id/txtAmount"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
-
-    <!-- Currency Radio Buttons -->
-    <RadioGroup
-        android:id="@+id/radioGroupCurrency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/edtAmount"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="8dp">
-
-        <RadioButton
-            android:id="@+id/radioUSD"
+        <TextView
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/usd" />
+            android:text="Li outya"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp" />
 
-        <RadioButton
-            android:id="@+id/radioKHR"
+        <TextView
+            android:id="@+id/txtAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/khr" />
-    </RadioGroup>
+            android:text="@string/amount"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@+id/edtAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/amount_hint"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp" />
 
-    <!-- Category Label -->
-    <TextView
-        android:id="@+id/txtCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/category"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/radioGroupCurrency"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp" />
+        <RadioGroup
+            android:id="@+id/radioGroupCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+            <RadioButton
+                android:id="@+id/radioUSD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/usd" />
+            <RadioButton
+                android:id="@+id/radioKHR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/khr" />
+        </RadioGroup>
 
-    <!-- Category Spinner and Add Button -->
-    <Spinner
-        android:id="@+id/spinnerCategory"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@id/btnAddCategory"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtCategory" />
+        <TextView
+            android:id="@+id/txtCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/category"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <ImageButton
+                android:id="@+id/btnAddCategory"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_input_add"
+                android:contentDescription="@string/add_category" />
+        </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btnAddCategory"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:srcCompat="@android:drawable/ic_input_add"
-        android:contentDescription="@string/add_category"
-        app:layout_constraintTop_toBottomOf="@id/txtCategory"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/txtRemark2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/remark"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@+id/edtRemark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/remark_hint"
+            android:inputType="textMultiLine"
+            android:gravity="top|start"
+            android:layout_marginTop="8dp" />
 
-    <!-- Remark Label -->
-    <TextView
-        android:id="@+id/txtRemark2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/remark"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/spinnerCategory"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/txtCreatedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Created Date"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@+id/edtCreatedDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Date"
+            android:focusable="false"
+            android:clickable="true"
+            android:layout_marginTop="8dp" />
 
-    <!-- Remark Input -->
-    <EditText
-        android:id="@+id/edtRemark"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="top|start"
-        android:hint="@string/remark_hint"
-        android:inputType="textMultiLine"
-        app:layout_constraintTop_toBottomOf="@id/txtRemark2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        <Button
+            android:id="@+id/btnAddExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_expense"
+            android:layout_marginTop="24dp" />
 
-    <!-- Created Date Label -->
-    <TextView
-        android:id="@+id/txtCreatedDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Created Date"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/edtRemark"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp" />
+    </LinearLayout>
+    </ScrollView>
 
-    <!-- Created Date Input -->
-    <EditText
-        android:id="@+id/edtCreatedDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Select Date"
-        android:focusable="false"
-        app:layout_constraintTop_toBottomOf="@id/txtCreatedDate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@color/nav_item_color_state"
+        app:itemTextColor="@color/nav_item_color_state"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
 
-    <!-- Add Expense Button -->
-    <Button
-        android:id="@+id/btnAddExpense"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add_expense"
-        app:layout_constraintTop_toBottomOf="@id/edtCreatedDate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
